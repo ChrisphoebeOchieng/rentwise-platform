@@ -1,0 +1,46 @@
+:root {
+  font-family: "DM Sans", sans-serif;
+
+  /* Brand colours */
+  --color-ivory: #faf8f3;
+  --color-cream: #f2eee5;
+  --color-white: #ffffff;
+  --color-espresso: #30251f;
+  --color-brown: #59483d;
+  --color-muted: #8c8177;
+  --color-gold: #b69a69;
+  --color-gold-light: #e8ddc8;
+  --color-border: #e9e2d7;
+
+  /* Semantic colours */
+  --color-success: #657b60;
+  --color-warning: #b88a4b;
+  --color-danger: #a65d52;
+
+  /* Typography */
+  --font-heading: "Cormorant Garamond", Georgia, serif;
+  --font-body: "DM Sans", sans-serif;
+
+  /* Spacing */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+
+  /* Shape and elevation */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --radius-pill: 999px;
+
+  --shadow-soft: 0 8px 30px rgba(48, 37, 31, 0.05);
+  --shadow-card: 0 3px 16px rgba(48, 37, 31, 0.04);
+
+  /* Layout */
+  --container-width: 1240px;
+  --nav-height: 82px;
+}
