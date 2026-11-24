@@ -1,3 +1,4 @@
+from app.extensions import db
 from flask import Blueprint, request, jsonify
 from flask_jwt_extended import (
     create_access_token,
@@ -126,7 +127,7 @@ def login():
 @jwt_required()
 def current_user():
     user_id = get_jwt_identity()
-    user = User.query.get(user_id)
+    user = db.session.get(User, user_id)
 
     if not user or not user.is_active:
         return jsonify({
