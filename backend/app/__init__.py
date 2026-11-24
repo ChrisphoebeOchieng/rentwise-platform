@@ -5,6 +5,7 @@ from app.extensions import db, migrate, jwt, bcrypt, cors
 from app import models
 from app.auth.routes import auth_bp
 from app.routes.tenant import tenant_bp
+from app.routes.properties import properties_bp
 
 
 def create_app(config_class=Config):
@@ -19,6 +20,7 @@ def create_app(config_class=Config):
 
     app.register_blueprint(auth_bp)
     app.register_blueprint(tenant_bp)
+    app.register_blueprint(properties_bp)
 
     @app.get("/api/health")
     def health_check():

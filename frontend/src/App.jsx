@@ -4,6 +4,8 @@ import HomePage from "./pages/HomePage";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
 import PortalPage from "./pages/PortalPage";
+import PropertyListingsPage from "./pages/PropertyListingsPage";
+import PropertyDetailsPage from "./pages/PropertyDetailsPage";
 import ProtectedRoute from "./routes/ProtectedRoute";
 
 function AppRoutes() {
@@ -16,6 +18,8 @@ function AppRoutes() {
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
+      <Route path="/properties" element={<PropertyListingsPage />} />
+      <Route path="/properties/:propertyId" element={<PropertyDetailsPage />} />
       <Route path="/login" element={user ? <Navigate to="/portal/tenant" replace /> : <LoginPage />} />
       <Route path="/register" element={user ? <Navigate to="/portal/tenant" replace /> : <RegisterPage />} />
       <Route

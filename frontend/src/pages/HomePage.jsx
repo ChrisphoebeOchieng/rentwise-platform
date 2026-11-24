@@ -50,8 +50,8 @@ function App() {
             </p>
 
             <div className="welcome-section__actions">
-              <Link to="/register" className="button button--primary button--medium">
-                Explore RentWise <ArrowRight size={16} />
+              <Link to="/properties" className="button button--primary button--medium">
+                Explore Properties <ArrowRight size={16} />
               </Link>
               <Link to="/login" className="button button--text">Sign in to your account</Link>
             </div>

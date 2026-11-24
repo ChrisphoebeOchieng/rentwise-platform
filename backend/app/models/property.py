@@ -23,6 +23,36 @@ class Property(db.Model):
     description = db.Column(db.Text)
     monthly_rent = db.Column(db.Numeric(12, 2), nullable=False)
 
+    bedrooms = db.Column(
+        db.Integer,
+        nullable=False,
+        default=0,
+        server_default=db.text("0")
+    )
+
+    bathrooms = db.Column(
+        db.Integer,
+        nullable=False,
+        default=1,
+        server_default=db.text("1")
+    )
+
+    floor_area = db.Column(db.Numeric(10, 2), nullable=True)
+
+    furnished = db.Column(
+        db.Boolean,
+        nullable=False,
+        default=False,
+        server_default=db.false()
+    )
+
+    amenities = db.Column(
+        db.JSON,
+        nullable=False,
+        default=list,
+        server_default=db.text("'[]'")
+    )
+
     availability_status = db.Column(
         db.String(30),
         default="available",
