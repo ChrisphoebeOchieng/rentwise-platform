@@ -1,0 +1,680 @@
+.tenant-dashboard {
+  min-height: 100vh;
+  background: var(--color-ivory, #faf8f3);
+  color: var(--color-espresso, #30251f);
+  font-family: var(--font-body, "DM Sans"), sans-serif;
+}
+
+.tenant-topbar {
+  min-height: 76px;
+  padding: 0 6.5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  background: rgba(255, 255, 255, 0.88);
+  border-bottom: 1px solid var(--color-border, #e9e2d7);
+}
+
+.tenant-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--color-espresso, #30251f);
+  text-decoration: none;
+  font-family: var(--font-heading, "Cormorant Garamond"), serif;
+  font-size: 27px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.tenant-brand__mark {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  color: #fff;
+  background: var(--color-espresso, #30251f);
+}
+
+.tenant-brand__dot {
+  color: var(--color-gold, #b69a69);
+}
+
+.tenant-topbar__nav {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.tenant-topbar__nav a {
+  padding: 29px 0 26px;
+  color: var(--color-muted, #8c8177);
+  border-bottom: 2px solid transparent;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 600;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.tenant-topbar__nav a:hover,
+.tenant-topbar__nav a.is-active {
+  color: var(--color-espresso, #30251f);
+  border-color: var(--color-gold, #b69a69);
+}
+
+.tenant-account {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.tenant-avatar {
+  width: 35px;
+  height: 35px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #e9dfce;
+  color: #59483d;
+  font-family: var(--font-heading, "Cormorant Garamond"), serif;
+  font-size: 19px;
+  font-weight: 600;
+}
+
+.tenant-account__name {
+  max-width: 130px;
+  overflow: hidden;
+  color: var(--color-brown, #59483d);
+  font-size: 12px;
+  font-weight: 600;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tenant-logout {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--color-border, #e9e2d7);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--color-brown, #59483d);
+  cursor: pointer;
+}
+
+.tenant-logout:hover {
+  background: var(--color-cream, #f2eee5);
+}
+
+.tenant-content {
+  width: min(1320px, 87%);
+  margin: 0 auto;
+  padding: 55px 0 28px;
+}
+
+.tenant-welcome {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 32px;
+}
+
+.tenant-eyebrow {
+  display: block;
+  margin-bottom: 9px;
+  color: var(--color-gold, #a78a59);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+}
+
+.tenant-welcome h1 {
+  margin: 0;
+  color: var(--color-espresso, #30251f);
+  font-family: var(--font-heading, "Cormorant Garamond"), serif;
+  font-size: clamp(35px, 4vw, 49px);
+  font-weight: 500;
+  letter-spacing: -1px;
+  line-height: 1.08;
+}
+
+.tenant-welcome h1 em {
+  color: var(--color-gold, #a78a59);
+  font-weight: 500;
+}
+
+.tenant-welcome p {
+  margin: 10px 0 0;
+  color: var(--color-muted, #8c8177);
+  font-size: 13px;
+}
+
+.tenant-welcome__date {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 11px 14px;
+  border: 1px solid var(--color-border, #e9e2d7);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--color-brown, #59483d);
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.tenant-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 17px;
+  margin-bottom: 22px;
+}
+
+.tenant-stat-card {
+  min-height: 155px;
+  padding: 21px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border: 1px solid var(--color-border, #e9e2d7);
+  border-radius: 11px;
+  background: #fff;
+}
+
+.tenant-stat-card__icon,
+.tenant-activity__icon,
+.tenant-notification__icon {
+  width: 35px;
+  height: 35px;
+  display: grid;
+  flex: 0 0 auto;
+  place-items: center;
+  border-radius: 9px;
+  background: #f3eee5;
+  color: #947b55;
+}
+
+.tenant-stat-card__label {
+  margin-top: 15px;
+  color: var(--color-muted, #8c8177);
+  font-size: 11px;
+}
+
+.tenant-stat-card strong {
+  margin-top: 4px;
+  color: var(--color-espresso, #30251f);
+  font-family: var(--font-heading, "Cormorant Garamond"), serif;
+  font-size: 27px;
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+.tenant-stat-card__note {
+  margin-top: 5px;
+  color: #9a9086;
+  font-size: 10px;
+}
+
+.tenant-main-grid,
+.tenant-bottom-grid {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: 18px;
+  margin-bottom: 19px;
+}
+
+.tenant-panel {
+  min-width: 0;
+  padding: 24px;
+  border: 1px solid var(--color-border, #e9e2d7);
+  border-radius: 11px;
+  background: #fff;
+}
+
+.tenant-panel__heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.tenant-panel__heading .tenant-eyebrow {
+  margin-bottom: 5px;
+}
+
+.tenant-panel__heading h2 {
+  margin: 0;
+  color: var(--color-espresso, #30251f);
+  font-family: var(--font-heading, "Cormorant Garamond"), serif;
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.tenant-status {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 9px;
+  border-radius: 30px;
+  background: #f1eee8;
+  color: #776c60;
+  font-size: 9px;
+  font-weight: 700;
+  text-transform: capitalize;
+  white-space: nowrap;
+}
+
+.tenant-status--active,
+.tenant-status--approved,
+.tenant-status--completed,
+.tenant-status--paid,
+.tenant-status--resolved {
+  background: #eaf2e9;
+  color: #52734e;
+}
+
+.tenant-status--pending,
+.tenant-status--under-review,
+.tenant-status--in-progress {
+  background: #f7f0df;
+  color: #96743b;
+}
+
+.tenant-status--rejected,
+.tenant-status--overdue,
+.tenant-status--cancelled {
+  background: #f7e9e5;
+  color: #a45c4e;
+}
+
+.tenant-property {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.tenant-property__image {
+  width: 155px;
+  min-width: 155px;
+  height: 135px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 9px;
+  background: #f2eee5;
+  color: #a38c67;
+}
+
+.tenant-property__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.tenant-property__details h3 {
+  margin: 2px 0 8px;
+  font-family: var(--font-heading, "Cormorant Garamond"), serif;
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.tenant-property__details p {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin: 0 0 13px;
+  color: var(--color-muted, #8c8177);
+  font-size: 11px;
+}
+
+.tenant-property__details > strong {
+  color: var(--color-espresso, #30251f);
+  font-size: 17px;
+}
+
+.tenant-property__details > strong span {
+  color: var(--color-muted, #8c8177);
+  font-size: 10px;
+  font-weight: 400;
+}
+
+.tenant-property__dates {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  margin-top: 15px;
+  color: var(--color-muted, #8c8177);
+  font-size: 10px;
+}
+
+.tenant-count,
+.tenant-section-count {
+  color: var(--color-muted, #8c8177);
+  font-size: 10px;
+}
+
+.tenant-count {
+  width: 27px;
+  height: 27px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #f2eee5;
+  color: #7d6848;
+  font-weight: 700;
+}
+
+.tenant-notification-list,
+.tenant-activity-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.tenant-notification {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  padding: 12px 0;
+  border-top: 1px solid #f0ece5;
+}
+
+.tenant-notification:first-child,
+.tenant-activity:first-child,
+.tenant-maintenance:first-child {
+  padding-top: 0;
+  border-top: 0;
+}
+
+.tenant-notification > div {
+  min-width: 0;
+  flex: 1;
+}
+
+.tenant-notification p {
+  margin: 1px 0 5px;
+  color: var(--color-brown, #59483d);
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.tenant-notification > div span {
+  color: #a49a90;
+  font-size: 9px;
+}
+
+.tenant-notification > i {
+  width: 6px;
+  height: 6px;
+  margin-top: 6px;
+  border-radius: 50%;
+  background: var(--color-gold, #b69a69);
+}
+
+.tenant-table-panel {
+  margin-bottom: 19px;
+}
+
+.tenant-table-wrap {
+  overflow-x: auto;
+}
+
+.tenant-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.tenant-table th {
+  padding: 12px 13px;
+  background: #faf8f4;
+  color: #9a9086;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.7px;
+  text-transform: uppercase;
+}
+
+.tenant-table td {
+  padding: 15px 13px;
+  border-bottom: 1px solid #f0ece5;
+  color: var(--color-brown, #59483d);
+  font-size: 11px;
+}
+
+.tenant-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.tenant-activity,
+.tenant-maintenance {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 13px 0;
+  border-top: 1px solid #f0ece5;
+}
+
+.tenant-activity__details {
+  min-width: 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.tenant-activity__details strong {
+  overflow: hidden;
+  color: var(--color-brown, #59483d);
+  font-size: 11px;
+  font-weight: 600;
+  text-overflow: ellipsis;
+}
+
+.tenant-activity__details span {
+  color: #a49a90;
+  font-size: 9px;
+}
+
+.tenant-maintenance .tenant-activity__details strong {
+  white-space: normal;
+  line-height: 1.4;
+}
+
+.tenant-empty {
+  min-height: 125px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 14px;
+  text-align: center;
+}
+
+.tenant-empty__icon {
+  width: 37px;
+  height: 37px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 9px;
+  border-radius: 50%;
+  background: #f5f1e9;
+  color: #a38c67;
+}
+
+.tenant-empty strong {
+  color: var(--color-brown, #59483d);
+  font-size: 11px;
+}
+
+.tenant-empty p {
+  max-width: 310px;
+  margin: 5px 0 0;
+  color: #a49a90;
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+.tenant-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 22px 0 5px;
+  border-top: 1px solid var(--color-border, #e9e2d7);
+}
+
+.tenant-footer > span {
+  color: var(--color-espresso, #30251f);
+  font-family: var(--font-heading, "Cormorant Garamond"), serif;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.tenant-footer p {
+  color: #a49a90;
+  font-size: 10px;
+}
+
+.tenant-loading {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: var(--color-ivory, #faf8f3);
+  color: var(--color-brown, #59483d);
+  text-align: center;
+}
+
+.tenant-loader {
+  color: var(--color-gold, #b69a69);
+  animation: tenant-spin 1.2s linear infinite;
+}
+
+@keyframes tenant-spin {
+  to { transform: rotate(360deg); }
+}
+
+.tenant-loading p {
+  color: var(--color-muted, #8c8177);
+  font-size: 12px;
+}
+
+.tenant-loading h2 {
+  margin: 13px 0 0;
+  font-family: var(--font-heading, "Cormorant Garamond"), serif;
+  font-size: 30px;
+}
+
+.tenant-error-icon {
+  color: #a45c4e;
+}
+
+.tenant-primary-button {
+  margin-top: 14px;
+  padding: 11px 19px;
+  border: 0;
+  border-radius: 6px;
+  background: var(--color-espresso, #30251f);
+  color: #fff;
+  cursor: pointer;
+  font-size: 11px;
+}
+
+@media (max-width: 1050px) {
+  .tenant-topbar {
+    padding: 0 4%;
+  }
+
+  .tenant-topbar__nav {
+    gap: 17px;
+  }
+
+  .tenant-content {
+    width: 92%;
+  }
+
+  .tenant-stat-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 720px) {
+  .tenant-topbar {
+    min-height: 68px;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 13px 5%;
+  }
+
+  .tenant-topbar__nav {
+    order: 3;
+    width: 100%;
+    overflow-x: auto;
+    gap: 23px;
+  }
+
+  .tenant-topbar__nav a {
+    padding: 10px 0 8px;
+    white-space: nowrap;
+  }
+
+  .tenant-account__name {
+    display: none;
+  }
+
+  .tenant-content {
+    width: 90%;
+    padding-top: 35px;
+  }
+
+  .tenant-welcome {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .tenant-stat-grid {
+    gap: 10px;
+  }
+
+  .tenant-stat-card {
+    min-height: 145px;
+    padding: 15px;
+  }
+
+  .tenant-main-grid,
+  .tenant-bottom-grid {
+    grid-template-columns: 1fr;
+    gap: 13px;
+  }
+
+  .tenant-panel {
+    padding: 19px;
+  }
+
+  .tenant-property {
+    flex-direction: column;
+  }
+
+  .tenant-property__image {
+    width: 100%;
+    height: 165px;
+  }
+
+  .tenant-table {
+    min-width: 580px;
+  }
+}
+
+@media (max-width: 390px) {
+  .tenant-stat-card strong {
+    font-size: 23px;
+  }
+
+  .tenant-stat-card__label {
+    font-size: 10px;
+  }
+}

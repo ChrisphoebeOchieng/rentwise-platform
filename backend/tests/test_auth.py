@@ -89,3 +89,33 @@ def test_profile_rejects_missing_token(client):
     response = client.get("/api/auth/me")
 
     assert response.status_code == 401
+
+
+def test_tenant_dashboard_requires_authentication(client):
+    response = client.get("/api/tenant/dashboard")
+
+    assert response.status_code == 401
+
+
+def test_tenant_can_access_dashboard(client):
+    register_tenant(client)
+
+    login_response = client.post(
+        "/api/auth/login",
+        json={
+            "email": "tenant@test.com",
+            "password": "TestPass123!",
+        },
+    )
+
+    token = login_response.json["access_token"]
+
+    response = client.get(
+        "/api/tenant/dashboard",
+        headers={"Authorization": f"Bearer {token}"},
+    )
+
+    assert response.status_code == 200
+    assert response.json["success"] is True
+    assert response.json["user"]["email"] == "tenant@test.com"
+    assert response.json["tenancy"] is None
